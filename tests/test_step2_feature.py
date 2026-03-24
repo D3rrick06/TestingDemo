@@ -191,7 +191,8 @@ class TestCheckoutPartialFailure:
         ACTION: Checkout attempted.
         """
         """
-        POSTCONDITION: That item fails; failure message mentions the quantity issue.
+        POSTCONDITION: That item fails; failure message mentions
+                       the quantity issue.
         """
         cart.add_to_cart("heidi@example.com", "laptop", 999)
 
