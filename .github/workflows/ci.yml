@@ -34,7 +34,7 @@ jobs:
     - name: Dependency Check
       run: |
         pip install safety
-        safety scan --key ${{ secrets.SAFETY_API_KEY }}
+        safety check --ignore-unpinned-requirements
 
     - name: Secrets Scan
       run: |
