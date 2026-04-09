@@ -25,3 +25,18 @@ jobs:
 
     - name: Test
       run: pytest tests/ -v
+
+    - name: Security Check
+      run: |
+        pip install bandit
+        bandit -r src/
+
+    - name: Dependency Check
+      run: |
+        pip install safety
+        safety scan --key ${{ secrets.SAFETY_API_KEY }}
+
+    - name: Secrets Scan
+      run: |
+        pip install detect-secrets
+        detect-secrets scan src/
